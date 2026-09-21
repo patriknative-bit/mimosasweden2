@@ -5,23 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mimosasweden2.0 – Naturlig tvåltillverkning & hudvård</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background-color: #faf9f6;
+      background: #faf9f6;
       color: #1a1a1a;
       line-height: 1.6;
     }
 
+    /* Header */
     header {
-      background-color: #1A3C34;
+      background: #1A3C34;
       color: white;
-      padding: 1rem 2.5rem;
+      padding: 0.9rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -29,120 +26,126 @@
       top: 0;
       z-index: 100;
     }
+    .logo { font-size: 1.25rem; font-weight: 600; }
+    .logo span { display: block; font-size: 0.78rem; font-weight: 400; opacity: 0.8; }
+    nav { display: flex; gap: 1.6rem; align-items: center; }
+    nav a { color: white; text-decoration: none; font-size: 0.9rem; opacity: 0.9; }
+    nav a:hover { opacity: 1; }
+    .lang { font-size: 0.85rem; opacity: 0.75; }
 
-    .logo {
-      font-size: 1.3rem;
-      font-weight: 600;
-    }
-
-    .logo span {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 400;
-      opacity: 0.8;
-      margin-top: 1px;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.7rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-size: 0.92rem;
-      opacity: 0.9;
-    }
-
-    nav a:hover {
-      opacity: 1;
-    }
-
-    .lang {
-      font-size: 0.85rem;
-      opacity: 0.75;
-    }
-
-    /* HERO - närmare visionen */
+    /* HERO - så nära visionen som möjligt */
     .hero {
-      background: linear-gradient(135deg, #1A3C34 0%, #243f36 100%);
+      background: linear-gradient(105deg, #1A3C34 0%, #1A3C34 48%, #2a4f42 100%);
       color: white;
-      padding: 5.5rem 2rem 5rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3rem;
+      padding: 4.5rem 2rem 4rem;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 2rem;
       align-items: center;
-      justify-content: center;
+      min-height: 520px;
       position: relative;
       overflow: hidden;
     }
 
-    .hero-text {
+    .hero-left {
       max-width: 480px;
-      z-index: 2;
+      padding-left: 1rem;
     }
 
-    .hero-text h1 {
-      font-size: 3.2rem;
-      line-height: 1.15;
-      margin-bottom: 1.3rem;
+    .hero-left .tag {
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .hero-left h1 {
+      font-size: 3.4rem;
+      line-height: 1.12;
       font-weight: 600;
-      letter-spacing: -0.8px;
+      margin-bottom: 1.3rem;
+      color: #f5e6c8; /* guldig/creme som i visionen */
+      letter-spacing: -1px;
     }
 
-    .hero-text p {
-      font-size: 1.12rem;
-      opacity: 0.92;
-      margin-bottom: 2.2rem;
+    .hero-left p {
+      font-size: 1.05rem;
+      opacity: 0.9;
+      margin-bottom: 2rem;
+      max-width: 420px;
       line-height: 1.65;
     }
 
     .btn {
       display: inline-block;
-      background-color: #8BA888;
+      background: #8BA888;
       color: #1A3C34;
-      padding: 0.95rem 1.9rem;
-      border-radius: 8px;
+      padding: 0.9rem 1.8rem;
+      border-radius: 7px;
       text-decoration: none;
       font-weight: 600;
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: all 0.2s;
     }
+    .btn:hover { background: #a3c0a0; transform: translateY(-1px); }
 
-    .btn:hover {
-      background-color: #a3c0a0;
-      transform: translateY(-1px);
-    }
-
-    .hero-products {
+    .hero-right {
+      position: relative;
+      height: 420px;
       display: flex;
-      gap: 1.2rem;
-      align-items: flex-end;
-      z-index: 2;
+      align-items: center;
+      justify-content: center;
     }
 
-    .hero-img {
+    .hero-right img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.35);
+    }
+
+    /* Features under hero */
+    .hero-features {
+      background: white;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      max-width: 1100px;
+      margin: -40px auto 0;
       border-radius: 14px;
-      object-fit: cover;
-      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      position: relative;
+      z-index: 10;
     }
 
-    .hero-img.main {
-      width: 220px;
-      height: 280px;
+    .hero-feature {
+      background: white;
+      padding: 1.6rem 1.2rem;
+      text-align: center;
     }
 
-    .hero-img.small {
-      width: 140px;
-      height: 180px;
+    .hero-feature h4 {
+      font-size: 0.88rem;
+      color: #1A3C34;
+      margin-bottom: 0.35rem;
+      font-weight: 600;
     }
 
-    /* Sections */
+    .hero-feature p {
+      font-size: 0.8rem;
+      color: #666;
+      line-height: 1.4;
+    }
+
+    /* Rest of page */
     .section {
       padding: 5rem 2rem;
-      max-width: 1120px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
@@ -152,48 +155,15 @@
     }
 
     .section-header h2 {
-      font-size: 2rem;
+      font-size: 1.9rem;
       color: #1A3C34;
-      margin-bottom: 0.6rem;
-      font-weight: 600;
+      margin-bottom: 0.5rem;
     }
 
     .section-header p {
       color: #555;
-      max-width: 520px;
+      max-width: 500px;
       margin: 0 auto;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .feature {
-      background: white;
-      padding: 1.9rem 1.5rem;
-      border-radius: 14px;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.04);
-      text-align: center;
-    }
-
-    .feature h3 {
-      color: #1A3C34;
-      margin-bottom: 0.5rem;
-      font-size: 1.1rem;
-    }
-
-    .feature p {
-      font-size: 0.93rem;
-      color: #555;
-    }
-
-    /* Products */
-    .products-bg {
-      background: #f0f4ef;
-      border-radius: 24px;
-      padding: 4rem 2rem;
     }
 
     .products {
@@ -204,42 +174,38 @@
 
     .product-card {
       background: white;
-      border-radius: 16px;
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.06);
       transition: transform 0.25s;
     }
-
-    .product-card:hover {
-      transform: translateY(-5px);
-    }
+    .product-card:hover { transform: translateY(-5px); }
 
     .product-card img {
       width: 100%;
-      height: 220px;
+      height: 210px;
       object-fit: cover;
     }
 
     .product-info {
-      padding: 1.5rem;
+      padding: 1.4rem;
     }
 
     .product-info h3 {
       color: #1A3C34;
-      margin-bottom: 0.4rem;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
+      margin-bottom: 0.35rem;
     }
 
     .product-info p {
-      font-size: 0.92rem;
+      font-size: 0.9rem;
       color: #555;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .price {
       font-weight: 600;
       color: #1A3C34;
-      font-size: 1.1rem;
       margin-bottom: 1rem;
     }
 
@@ -247,90 +213,33 @@
       display: inline-block;
       background: #1A3C34;
       color: white;
-      padding: 0.65rem 1.3rem;
-      border-radius: 7px;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
       text-decoration: none;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-
-    .btn-dark:hover {
-      background: #2d5a4a;
-    }
-
-    /* Blog */
-    .blog-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.7rem;
-    }
-
-    .blog-card {
-      background: white;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 6px 22px rgba(0,0,0,0.04);
-    }
-
-    .blog-card img {
-      width: 100%;
-      height: 170px;
-      object-fit: cover;
-    }
-
-    .blog-content {
-      padding: 1.4rem;
-    }
-
-    .blog-content h3 {
-      font-size: 1.1rem;
-      color: #1A3C34;
-      margin-bottom: 0.45rem;
-    }
-
-    .blog-content p {
-      font-size: 0.92rem;
-      color: #555;
+      font-size: 0.88rem;
     }
 
     footer {
       background: #1A3C34;
       color: white;
-      padding: 3.2rem 2rem;
       text-align: center;
-      margin-top: 2rem;
+      padding: 3rem 2rem;
+      margin-top: 3rem;
     }
 
-    footer .brand {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
+    footer .brand { font-weight: 600; margin-bottom: 0.4rem; }
+    footer p { opacity: 0.85; font-size: 0.9rem; margin-bottom: 0.3rem; }
+    footer .small { margin-top: 1.5rem; font-size: 0.8rem; opacity: 0.65; }
 
-    footer p {
-      opacity: 0.85;
-      font-size: 0.93rem;
-      margin-bottom: 0.3rem;
-    }
-
-    footer .small {
-      margin-top: 1.6rem;
-      font-size: 0.8rem;
-      opacity: 0.65;
-    }
-
-    @media (max-width: 800px) {
-      .hero-text h1 {
-        font-size: 2.4rem;
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 3.5rem 1.5rem;
       }
-      .hero-products {
-        flex-direction: column;
-        align-items: center;
-      }
-      .hero-img.main, .hero-img.small {
-        width: 200px;
-        height: 240px;
-      }
+      .hero-left { padding-left: 0; margin: 0 auto; }
+      .hero-left h1 { font-size: 2.6rem; }
+      .hero-features { grid-template-columns: 1fr 1fr; margin-top: 2rem; }
     }
   </style>
 </head>
@@ -350,116 +259,75 @@
     </nav>
   </header>
 
-  <!-- HERO - försöker efterlikna visionen -->
+  <!-- HERO - så nära visionbilden som möjligt -->
   <section class="hero">
-    <div class="hero-text">
+    <div class="hero-left">
+      <div class="tag">🌿 Botanisk lyx för din hud</div>
       <h1>Naturlig vård.<br>Äkta lyx.</h1>
-      <p>Handgjorda tvålar och råvaror av högsta kvalitet. Mimosa hostilis-bark, ren glycerin och allt du behöver för att skapa dina egna hudvårdsprodukter.</p>
-      <a href="#" class="btn">Upptäck produkterna →</a>
+      <p>Handgjorda tvålar och hudplej från noga utvalda botaniska ingredienser. För en hud som skiner av hälsa och harmoni.</p>
+      <a href="#" class="btn">Upptäck våra produkter →</a>
     </div>
 
-    <div class="hero-products">
-      <!-- Bark / pulver-känsla -->
-      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=500&fit=crop" alt="Mimosa bark" class="hero-img main">
-      
-      <!-- Grön tvål -->
-      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=400&fit=crop" alt="Grön tvål" class="hero-img small" style="margin-bottom: 30px;">
+    <div class="hero-right">
+      <!-- Bild som liknar visionens produktkomposition -->
+      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=700&h=500&fit=crop&q=80" alt="Mimosa bark, tvål och glycerin">
     </div>
   </section>
+
+  <!-- Features rad under hero (som i visionen) -->
+  <div class="hero-features">
+    <div class="hero-feature">
+      <h4>Naturliga ingredienser</h4>
+      <p>Vi använder noga utvalda botaniska råvaror av högsta kvalitet.</p>
+    </div>
+    <div class="hero-feature">
+      <h4>Hållbar hudvård</h4>
+      <p>Skonsamt för dig och snällt mot naturen.</p>
+    </div>
+    <div class="hero-feature">
+      <h4>Sensorisk upplevelse</h4>
+      <p>Rena dofter, krämiga texturer och en känsla av verklig lyx.</p>
+    </div>
+    <div class="hero-feature">
+      <h4>Gjort med kärlek</h4>
+      <p>Små batcher, handgjort i Sverige med fokus på kvalitet.</p>
+    </div>
+  </div>
 
   <section class="section">
     <div class="section-header">
-      <h2>Varför välja oss?</h2>
-      <p>Vi fokuserar på rena råvaror, ärlig information och produkter som passar både nybörjare och erfarna tvåltillverkare.</p>
+      <h2>Utvalda produkter</h2>
+      <p>Börja din tvåltillverkning med våra mest populära råvaror.</p>
     </div>
-    
-    <div class="features">
-      <div class="feature">
-        <h3>100% Naturligt</h3>
-        <p>Inga onödiga tillsatser. Bara rena, utvalda råvaror.</p>
-      </div>
-      <div class="feature">
-        <h3>För tvåltillverkning</h3>
-        <p>Mimosa hostilis-bark, glycerin, formar och tillbehör.</p>
-      </div>
-      <div class="feature">
-        <h3>Swish & Kort</h3>
-        <p>Enkel och säker betalning. F-skattsedel finns.</p>
-      </div>
-      <div class="feature">
-        <h3>Leverans i Europa</h3>
-        <p>Vi skickar dit det är tillåtet enligt lag.</p>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="products-bg">
-      <div class="section-header">
-        <h2>Utvalda produkter</h2>
-        <p>Börja din tvåltillverkning med våra mest populära råvaror.</p>
-      </div>
-      
-      <div class="products">
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=400&fit=crop" alt="Mimosa Hostilis Bark">
-          <div class="product-info">
-            <h3>Mimosa Hostilis Root Bark</h3>
-            <p>Ren, mald rotbark för tvåltillverkning och hudvård.</p>
-            <div class="price">från 149 kr</div>
-            <a href="#" class="btn-dark">Visa produkt</a>
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=400&fit=crop" alt="Glycerin">
-          <div class="product-info">
-            <h3>Vegetabilisk Glycerin</h3>
-            <p>100% ren, perfekt som bas i tvål och salvor.</p>
-            <div class="price">från 89 kr</div>
-            <a href="#" class="btn-dark">Visa produkt</a>
-          </div>
-        </div>
-        
-        <div class="product-card">
-          <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=400&fit=crop" alt="Startkit">
-          <div class="product-info">
-            <h3>Startkit Tvåltillverkning</h3>
-            <p>Allt du behöver för att göra din första tvål.</p>
-            <div class="price">299 kr</div>
-            <a href="#" class="btn-dark">Visa produkt</a>
-          </div>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=400&fit=crop" alt="Mimosa Hostilis Bark">
+        <div class="product-info">
+          <h3>Mimosa Hostilis Root Bark</h3>
+          <p>Ren, mald rotbark för tvåltillverkning och hudvård.</p>
+          <div class="price">från 149 kr</div>
+          <a href="#" class="btn-dark">Visa produkt</a>
         </div>
       </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="section-header">
-      <h2>Från bloggen</h2>
-      <p>Recept, tips och kunskap om naturlig hudvård och tvåltillverkning.</p>
-    </div>
-    
-    <div class="blog-grid">
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=350&fit=crop" alt="Recept">
-        <div class="blog-content">
-          <h3>Så gör du tvål med Mimosa hostilis</h3>
-          <p>En enkel guide för dig som vill börja.</p>
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=400&fit=crop" alt="Glycerin">
+        <div class="product-info">
+          <h3>Vegetabilisk Glycerin</h3>
+          <p>100% ren, perfekt som bas i tvål och salvor.</p>
+          <div class="price">från 89 kr</div>
+          <a href="#" class="btn-dark">Visa produkt</a>
         </div>
       </div>
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=350&fit=crop" alt="Hudvård">
-        <div class="blog-content">
-          <h3>Fördelar med Mimosa i hudvård</h3>
-          <p>Vad säger traditionen och erfarenheten?</p>
-        </div>
-      </div>
-      <div class="blog-card">
-        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=350&fit=crop" alt="Tips">
-        <div class="blog-content">
-          <h3>Nybörjarguide till kallprocess</h3>
-          <p>Allt du behöver veta innan du börjar.</p>
+
+      <div class="product-card">
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=400&fit=crop" alt="Startkit">
+        <div class="product-info">
+          <h3>Startkit Tvåltillverkning</h3>
+          <p>Allt du behöver för att göra din första tvål.</p>
+          <div class="price">299 kr</div>
+          <a href="#" class="btn-dark">Visa produkt</a>
         </div>
       </div>
     </div>
