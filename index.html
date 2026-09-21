@@ -18,11 +18,10 @@
       line-height: 1.6;
     }
 
-    /* Header */
     header {
       background-color: #1A3C34;
       color: white;
-      padding: 1.1rem 2.5rem;
+      padding: 1rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -32,15 +31,14 @@
     }
 
     .logo {
-      font-size: 1.35rem;
+      font-size: 1.3rem;
       font-weight: 600;
-      letter-spacing: -0.3px;
     }
 
     .logo span {
       display: block;
+      font-size: 0.8rem;
       font-weight: 400;
-      font-size: 0.82rem;
       opacity: 0.8;
       margin-top: 1px;
     }
@@ -48,15 +46,14 @@
     nav {
       display: flex;
       align-items: center;
-      gap: 1.8rem;
+      gap: 1.7rem;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       opacity: 0.9;
-      transition: opacity 0.2s;
     }
 
     nav a:hover {
@@ -64,29 +61,31 @@
     }
 
     .lang {
-      font-size: 0.88rem;
+      font-size: 0.85rem;
       opacity: 0.75;
-      margin-left: 0.5rem;
     }
 
-    /* Hero */
+    /* HERO - närmare visionen */
     .hero {
-      background: linear-gradient(145deg, #1A3C34 0%, #264f44 100%);
+      background: linear-gradient(135deg, #1A3C34 0%, #243f36 100%);
       color: white;
-      padding: 6rem 2rem 5.5rem;
+      padding: 5.5rem 2rem 5rem;
       display: flex;
       flex-wrap: wrap;
-      gap: 3.5rem;
+      gap: 3rem;
       align-items: center;
       justify-content: center;
+      position: relative;
+      overflow: hidden;
     }
 
     .hero-text {
-      max-width: 510px;
+      max-width: 480px;
+      z-index: 2;
     }
 
     .hero-text h1 {
-      font-size: 3.1rem;
+      font-size: 3.2rem;
       line-height: 1.15;
       margin-bottom: 1.3rem;
       font-weight: 600;
@@ -94,8 +93,8 @@
     }
 
     .hero-text p {
-      font-size: 1.15rem;
-      opacity: 0.9;
+      font-size: 1.12rem;
+      opacity: 0.92;
       margin-bottom: 2.2rem;
       line-height: 1.65;
     }
@@ -117,25 +116,27 @@
       transform: translateY(-1px);
     }
 
-    .hero-card {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(8px);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 18px;
-      padding: 2.8rem 2.5rem;
-      text-align: center;
-      min-width: 260px;
+    .hero-products {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-end;
+      z-index: 2;
     }
 
-    .hero-card .icon {
-      font-size: 2.8rem;
-      margin-bottom: 1rem;
+    .hero-img {
+      border-radius: 14px;
+      object-fit: cover;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.35);
     }
 
-    .hero-card p {
-      font-size: 1rem;
-      opacity: 0.9;
-      line-height: 1.5;
+    .hero-img.main {
+      width: 220px;
+      height: 280px;
+    }
+
+    .hero-img.small {
+      width: 140px;
+      height: 180px;
     }
 
     /* Sections */
@@ -147,64 +148,57 @@
 
     .section-header {
       text-align: center;
-      margin-bottom: 3.2rem;
+      margin-bottom: 3rem;
     }
 
     .section-header h2 {
       font-size: 2rem;
       color: #1A3C34;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
       font-weight: 600;
     }
 
     .section-header p {
       color: #555;
-      max-width: 540px;
+      max-width: 520px;
       margin: 0 auto;
-      font-size: 1.05rem;
     }
 
-    /* Features */
     .features {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
     }
 
     .feature {
       background: white;
-      padding: 2rem 1.6rem;
+      padding: 1.9rem 1.5rem;
       border-radius: 14px;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.04);
+      box-shadow: 0 6px 22px rgba(0,0,0,0.04);
       text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .feature:hover {
-      transform: translateY(-3px);
     }
 
     .feature h3 {
       color: #1A3C34;
-      margin-bottom: 0.55rem;
-      font-size: 1.12rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
     }
 
     .feature p {
-      font-size: 0.95rem;
+      font-size: 0.93rem;
       color: #555;
     }
 
     /* Products */
-    .products-section {
+    .products-bg {
       background: #f0f4ef;
       border-radius: 24px;
-      padding: 4.5rem 2.5rem;
+      padding: 4rem 2rem;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.8rem;
     }
 
@@ -212,28 +206,22 @@
       background: white;
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 6px 24px rgba(0,0,0,0.05);
-      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      transition: transform 0.25s;
     }
 
     .product-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 12px 32px rgba(0,0,0,0.08);
     }
 
-    .product-image {
-      height: 210px;
-      background: linear-gradient(135deg, #e5efe3, #d8e8d5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #1A3C34;
-      font-size: 1rem;
-      font-weight: 500;
+    .product-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
     }
 
     .product-info {
-      padding: 1.6rem;
+      padding: 1.5rem;
     }
 
     .product-info h3 {
@@ -243,7 +231,7 @@
     }
 
     .product-info p {
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       color: #555;
       margin-bottom: 1rem;
     }
@@ -252,108 +240,96 @@
       font-weight: 600;
       color: #1A3C34;
       font-size: 1.1rem;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1rem;
     }
 
-    .btn-small {
+    .btn-dark {
       display: inline-block;
-      background-color: #1A3C34;
+      background: #1A3C34;
       color: white;
       padding: 0.65rem 1.3rem;
       border-radius: 7px;
       text-decoration: none;
       font-size: 0.9rem;
       font-weight: 500;
-      transition: background 0.2s;
     }
 
-    .btn-small:hover {
-      background-color: #2d5a4a;
+    .btn-dark:hover {
+      background: #2d5a4a;
     }
 
     /* Blog */
     .blog-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.7rem;
     }
 
     .blog-card {
       background: white;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.04);
-      transition: transform 0.2s;
+      box-shadow: 0 6px 22px rgba(0,0,0,0.04);
     }
 
-    .blog-card:hover {
-      transform: translateY(-3px);
-    }
-
-    .blog-image {
+    .blog-card img {
+      width: 100%;
       height: 170px;
-      background: linear-gradient(135deg, #e5efe3, #d8e8d5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #1A3C34;
-      font-weight: 500;
+      object-fit: cover;
     }
 
     .blog-content {
-      padding: 1.5rem;
+      padding: 1.4rem;
     }
 
     .blog-content h3 {
-      font-size: 1.12rem;
+      font-size: 1.1rem;
       color: #1A3C34;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
     .blog-content p {
-      font-size: 0.93rem;
+      font-size: 0.92rem;
       color: #555;
     }
 
-    /* Footer */
     footer {
       background: #1A3C34;
       color: white;
-      padding: 3.5rem 2rem;
+      padding: 3.2rem 2rem;
       text-align: center;
       margin-top: 2rem;
     }
 
     footer .brand {
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       font-weight: 600;
       margin-bottom: 0.4rem;
     }
 
     footer p {
       opacity: 0.85;
-      font-size: 0.95rem;
-      margin-bottom: 0.35rem;
+      font-size: 0.93rem;
+      margin-bottom: 0.3rem;
     }
 
     footer .small {
-      margin-top: 1.8rem;
-      font-size: 0.82rem;
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
       opacity: 0.65;
     }
 
-    @media (max-width: 700px) {
+    @media (max-width: 800px) {
       .hero-text h1 {
-        font-size: 2.3rem;
+        font-size: 2.4rem;
       }
-      header {
-        padding: 1rem 1.3rem;
+      .hero-products {
+        flex-direction: column;
+        align-items: center;
       }
-      nav {
-        gap: 1rem;
-      }
-      nav a {
-        font-size: 0.85rem;
+      .hero-img.main, .hero-img.small {
+        width: 200px;
+        height: 240px;
       }
     }
   </style>
@@ -374,15 +350,20 @@
     </nav>
   </header>
 
+  <!-- HERO - försöker efterlikna visionen -->
   <section class="hero">
     <div class="hero-text">
       <h1>Naturlig vård.<br>Äkta lyx.</h1>
       <p>Handgjorda tvålar och råvaror av högsta kvalitet. Mimosa hostilis-bark, ren glycerin och allt du behöver för att skapa dina egna hudvårdsprodukter.</p>
       <a href="#" class="btn">Upptäck produkterna →</a>
     </div>
-    <div class="hero-card">
-      <div class="icon">🌿</div>
-      <p>Mimosa Hostilis<br>Root Bark & Glycerin</p>
+
+    <div class="hero-products">
+      <!-- Bark / pulver-känsla -->
+      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=400&h=500&fit=crop" alt="Mimosa bark" class="hero-img main">
+      
+      <!-- Grön tvål -->
+      <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=300&h=400&fit=crop" alt="Grön tvål" class="hero-img small" style="margin-bottom: 30px;">
     </div>
   </section>
 
@@ -413,7 +394,7 @@
   </section>
 
   <section class="section">
-    <div class="products-section">
+    <div class="products-bg">
       <div class="section-header">
         <h2>Utvalda produkter</h2>
         <p>Börja din tvåltillverkning med våra mest populära råvaror.</p>
@@ -421,32 +402,32 @@
       
       <div class="products">
         <div class="product-card">
-          <div class="product-image">Mimosa Hostilis Bark</div>
+          <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=400&fit=crop" alt="Mimosa Hostilis Bark">
           <div class="product-info">
             <h3>Mimosa Hostilis Root Bark</h3>
-            <p>Ren rotbark för tvåltillverkning och hudvård.</p>
+            <p>Ren, mald rotbark för tvåltillverkning och hudvård.</p>
             <div class="price">från 149 kr</div>
-            <a href="#" class="btn-small">Visa produkt</a>
+            <a href="#" class="btn-dark">Visa produkt</a>
           </div>
         </div>
         
         <div class="product-card">
-          <div class="product-image">Ren Glycerin</div>
+          <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=400&fit=crop" alt="Glycerin">
           <div class="product-info">
             <h3>Vegetabilisk Glycerin</h3>
             <p>100% ren, perfekt som bas i tvål och salvor.</p>
             <div class="price">från 89 kr</div>
-            <a href="#" class="btn-small">Visa produkt</a>
+            <a href="#" class="btn-dark">Visa produkt</a>
           </div>
         </div>
         
         <div class="product-card">
-          <div class="product-image">Startkit</div>
+          <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=400&fit=crop" alt="Startkit">
           <div class="product-info">
             <h3>Startkit Tvåltillverkning</h3>
             <p>Allt du behöver för att göra din första tvål.</p>
             <div class="price">299 kr</div>
-            <a href="#" class="btn-small">Visa produkt</a>
+            <a href="#" class="btn-dark">Visa produkt</a>
           </div>
         </div>
       </div>
@@ -461,21 +442,21 @@
     
     <div class="blog-grid">
       <div class="blog-card">
-        <div class="blog-image">Recept</div>
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=350&fit=crop" alt="Recept">
         <div class="blog-content">
           <h3>Så gör du tvål med Mimosa hostilis</h3>
           <p>En enkel guide för dig som vill börja.</p>
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-image">Hudvård</div>
+        <img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=500&h=350&fit=crop" alt="Hudvård">
         <div class="blog-content">
           <h3>Fördelar med Mimosa i hudvård</h3>
           <p>Vad säger traditionen och erfarenheten?</p>
         </div>
       </div>
       <div class="blog-card">
-        <div class="blog-image">Tips</div>
+        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=500&h=350&fit=crop" alt="Tips">
         <div class="blog-content">
           <h3>Nybörjarguide till kallprocess</h3>
           <p>Allt du behöver veta innan du börjar.</p>
