@@ -60,38 +60,41 @@
       opacity: 0.75;
     }
 
-    /* ---------- HERO ---------- */
+    /* ---------- HERO (Fullstor banner) ---------- */
     .hero {
       background: #1A3C34;
       position: relative;
+      overflow: hidden;
     }
 
     .hero-inner {
-      max-width: 1200px;
+      max-width: 1300px;
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      align-items: stretch;   /* Viktigt: gör att bilden fyller hela höjden */
+      grid-template-columns: 1fr 1.2fr;
+      align-items: stretch;
+      min-height: 620px;
     }
 
     .hero-text {
-      padding: 4rem 3rem 4rem 2.5rem;
+      padding: 5rem 3rem 5rem 3.5rem;
       color: white;
       align-self: center;
+      z-index: 2;
     }
 
     .hero-text .tag {
       font-size: 0.78rem;
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
       text-transform: uppercase;
       color: #d4af37;
-      font-weight: 600;
-      margin-bottom: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
     }
 
     .hero-text h1 {
-      font-size: 3.4rem;
-      line-height: 1.12;
+      font-size: 3.8rem;
+      line-height: 1.1;
       font-weight: 600;
       color: #f5e6c8;
       margin-bottom: 1.4rem;
@@ -103,14 +106,14 @@
       opacity: 0.92;
       margin-bottom: 2.2rem;
       line-height: 1.65;
-      max-width: 440px;
+      max-width: 460px;
     }
 
     .btn {
       display: inline-block;
       background: #8BA888;
       color: #1A3C34;
-      padding: 0.95rem 1.9rem;
+      padding: 1rem 2.1rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
@@ -126,7 +129,7 @@
     /* Badges under knappen */
     .badges {
       display: flex;
-      gap: 0.7rem;
+      gap: 0.8rem;
       align-items: center;
       margin-top: 1.8rem;
       font-size: 0.75rem;
@@ -137,76 +140,81 @@
 
     .badges .dot { opacity: 0.5; }
 
-    /* Hero-bilden – STOR, fyller hela kolumnen */
+    /* Hero-bilden – Fyller hela högerkolumnen kant-i-kant */
     .hero-image {
       position: relative;
+      width: 100%;
       height: 100%;
-      min-height: 560px;
+      min-height: 620px;
     }
 
     .hero-image img {
       width: 100%;
       height: 100%;
-      min-height: 560px;
       object-fit: cover;
       display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     /* ---------- FLYTANDE KORT ---------- */
     .float-card {
       position: absolute;
-      right: 1.4rem;
+      right: 2rem;
       background: #fbf9f4;
       color: #1a1a1a;
-      padding: 0.9rem 1rem;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      width: 250px;
-      z-index: 5;
+      padding: 1rem 1.1rem;
+      border-radius: 14px;
+      box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+      width: 270px;
+      z-index: 10;
+      border: 1px solid #eee;
     }
 
-    .float-card.top    { top: 1.4rem; }
-    .float-card.bottom { bottom: 1.4rem; }
+    .float-card.top    { top: 2.5rem; }
+    .float-card.bottom { bottom: 2.5rem; }
 
     .float-card .row {
       display: flex;
-      gap: 0.7rem;
+      gap: 0.8rem;
       align-items: center;
     }
 
     .float-card .icon {
-      width: 38px;
-      height: 38px;
-      min-width: 38px;
+      width: 40px;
+      height: 40px;
+      min-width: 40px;
       border-radius: 10px;
-      background: rgba(139,168,136,0.25);
+      background: rgba(139,168,136,0.2);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1rem;
+      font-size: 1.1rem;
     }
 
     .float-card .icon.heart { color: #b58b27; }
     .float-card .icon.leaf  { color: #4a6352; }
 
     .float-card h4 {
-      font-size: 0.82rem;
+      font-size: 0.85rem;
       font-weight: 700;
       color: #1A3C34;
+      margin-bottom: 0.1rem;
     }
 
     .float-card p {
-      font-size: 0.72rem;
+      font-size: 0.75rem;
       color: #666;
       line-height: 1.35;
     }
 
     .float-card a {
       display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.68rem;
+      margin-top: 0.6rem;
+      font-size: 0.7rem;
       font-weight: 700;
-      letter-spacing: 1px;
+      letter-spacing: 1.2px;
       text-transform: uppercase;
       color: #b58b27;
       text-decoration: none;
@@ -217,19 +225,19 @@
     /* ---------- FEATURES-BAR ---------- */
     .features-bar {
       background: white;
-      max-width: 1100px;
-      margin: -35px auto 0;
-      border-radius: 14px;
+      max-width: 1150px;
+      margin: -38px auto 0;
+      border-radius: 16px;
       box-shadow: 0 12px 40px rgba(0,0,0,0.08);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       position: relative;
-      z-index: 10;
+      z-index: 20;
       overflow: hidden;
     }
 
     .feature-item {
-      padding: 1.6rem 1.3rem;
+      padding: 1.8rem 1.4rem;
       text-align: center;
       border-right: 1px solid #eee;
     }
@@ -237,9 +245,9 @@
     .feature-item:last-child { border-right: none; }
 
     .feature-item h4 {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: #1A3C34;
-      margin-bottom: 0.35rem;
+      margin-bottom: 0.4rem;
       font-weight: 600;
     }
 
@@ -249,10 +257,10 @@
       line-height: 1.4;
     }
 
-    /* ---------- PRODUKTUTVAL (split-layout som visionen) ---------- */
+    /* ---------- PRODUKTUTVAL (split-layout) ---------- */
     .section {
       padding: 5rem 2rem;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
     }
 
@@ -262,14 +270,14 @@
     }
 
     .section-header h2 {
-      font-size: 1.9rem;
+      font-size: 2.1rem;
       color: #1A3C34;
       margin-bottom: 0.5rem;
     }
 
     .section-header p {
       color: #555;
-      max-width: 520px;
+      max-width: 540px;
       margin: 0 auto;
     }
 
@@ -277,7 +285,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       background: white;
-      border-radius: 18px;
+      border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 12px 40px rgba(0,0,0,0.08);
       margin-bottom: 4rem;
@@ -285,19 +293,20 @@
 
     .product-split .photo {
       position: relative;
-      min-height: 400px;
+      min-height: 450px;
     }
 
     .product-split .photo img {
       width: 100%;
       height: 100%;
-      min-height: 400px;
       object-fit: cover;
-      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .product-split .info {
-      padding: 3rem 2.5rem;
+      padding: 3.5rem 3rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -313,7 +322,7 @@
     }
 
     .info h3 {
-      font-size: 1.7rem;
+      font-size: 1.9rem;
       color: #1A3C34;
       margin-bottom: 0.8rem;
     }
@@ -334,11 +343,10 @@
       font-size: 0.95rem;
       color: #555;
       margin-bottom: 1.4rem;
-      max-width: 420px;
     }
 
     .info .price {
-      font-size: 1.9rem;
+      font-size: 2rem;
       font-weight: 600;
       color: #1A3C34;
       margin-bottom: 1rem;
@@ -355,7 +363,7 @@
       color: #777;
       border-top: 1px solid #eee;
       border-bottom: 1px solid #eee;
-      padding: 0.8rem 0;
+      padding: 0.9rem 0;
       margin-bottom: 1.6rem;
     }
 
@@ -366,7 +374,7 @@
       background: #1A3C34;
       color: white;
       text-align: center;
-      padding: 0.95rem;
+      padding: 1rem;
       border-radius: 10px;
       text-decoration: none;
       font-weight: 600;
@@ -386,7 +394,7 @@
 
     .product-card {
       background: white;
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 8px 28px rgba(0,0,0,0.06);
       transition: transform 0.25s;
@@ -396,12 +404,12 @@
 
     .product-card img {
       width: 100%;
-      height: 210px;
+      height: 220px;
       object-fit: cover;
     }
 
     .product-info {
-      padding: 1.5rem;
+      padding: 1.6rem;
     }
 
     .product-info h3 {
@@ -427,7 +435,7 @@
       background: #1A3C34;
       color: white;
       padding: 0.65rem 1.3rem;
-      border-radius: 7px;
+      border-radius: 8px;
       text-decoration: none;
       font-size: 0.9rem;
     }
@@ -437,8 +445,8 @@
       background: #1A3C34;
       color: white;
       text-align: center;
-      padding: 3.2rem 2rem;
-      margin-top: 2rem;
+      padding: 3.5rem 2rem;
+      margin-top: 3rem;
     }
 
     footer .brand { font-weight: 600; margin-bottom: 0.4rem; }
@@ -454,18 +462,16 @@
         padding: 3.5rem 2rem;
         text-align: center;
       }
-      .hero-text h1 { font-size: 2.6rem; }
+      .hero-text h1 { font-size: 2.7rem; }
       .hero-text p { margin-left: auto; margin-right: auto; }
       .badges { justify-content: center; }
       .hero-image { min-height: 420px; }
-      .hero-image img { min-height: 420px; }
-      .float-card { width: 210px; right: 1rem; }
-      .float-card .icon { width: 32px; height: 32px; min-width: 32px; font-size: 0.85rem; }
+      .float-card { width: 230px; right: 1rem; }
       .features-bar { grid-template-columns: 1fr 1fr; }
       .feature-item { border-right: none; border-bottom: 1px solid #eee; }
       .product-split { grid-template-columns: 1fr; }
-      .product-split .photo, .product-split .photo img { min-height: 260px; }
-      .product-split .info { padding: 2rem 1.6rem; }
+      .product-split .photo { min-height: 280px; }
+      .product-split .info { padding: 2.2rem 1.8rem; }
     }
   </style>
 </head>
@@ -485,7 +491,7 @@
     </nav>
   </header>
 
-  <!-- HERO med stor bild + flytande kort -->
+  <!-- HERO -->
   <section class="hero">
     <div class="hero-inner">
       <div class="hero-text">
@@ -503,9 +509,9 @@
       </div>
 
       <div class="hero-image">
-        <img src="jjAvx.jpg" alt="Mimosa hostilis bark, glycerin och råvaror för tvåltillverkning">
+        <img src="jjAvx.jpg" alt="Mimosa hostilis bark, glycerin och råvaror">
 
-        <!-- Flytande kort 1: uppe till höger -->
+        <!-- Flytande kort 1 -->
         <div class="float-card top">
           <div class="row">
             <div class="icon leaf">🌿</div>
@@ -517,7 +523,7 @@
           <a href="#">Läs mer →</a>
         </div>
 
-        <!-- Flytande kort 2: nere till höger -->
+        <!-- Flytande kort 2 -->
         <div class="float-card bottom">
           <div class="row">
             <div class="icon heart">💛</div>
@@ -532,6 +538,7 @@
     </div>
   </section>
 
+  <!-- Features bar -->
   <div class="features-bar">
     <div class="feature-item">
       <h4>Råvaror av hög kvalitet</h4>
@@ -551,7 +558,7 @@
     </div>
   </div>
 
-  <!-- Produkt i split-layout (som vision-bilden) -->
+  <!-- Produktsektion -->
   <section class="section" id="produkter">
     <div class="section-header">
       <h2>Utvalda råvaror</h2>
