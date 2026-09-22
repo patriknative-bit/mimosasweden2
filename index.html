@@ -4,30 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>mimosasweden2.0 – Råvaror för tvåltillverkning</title>
+
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        Roboto, Helvetica, Arial, sans-serif;
       background: #faf9f6;
       color: #1a1a1a;
       line-height: 1.6;
     }
+
     header {
-      background: #1A3C34;
+      background: #1a3c34;
       color: white;
       padding: 1rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      gap: 1rem;
       position: sticky;
       top: 0;
       z-index: 100;
     }
+
     .logo {
       font-size: 1.3rem;
       font-weight: 600;
     }
+
     .logo span {
       display: block;
       font-size: 0.8rem;
@@ -35,296 +49,533 @@
       opacity: 0.8;
       margin-top: 1px;
     }
+
     nav {
       display: flex;
       gap: 1.7rem;
       align-items: center;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-size: 0.92rem;
       opacity: 0.9;
     }
-    nav a:hover { opacity: 1; }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
     .lang {
       font-size: 0.85rem;
       opacity: 0.75;
+      white-space: nowrap;
     }
-    /* HERO */
+
+    /* Banner */
+
     .hero {
-      background: #1A3C34;
-      padding: 0;
-      position: relative;
+      background: #10271c;
     }
-    .hero-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1fr 1.15fr;
-      align-items: center;
-      min-height: 540px;
+
+    .hero-banner {
+      display: block;
+      width: 100%;
+      height: auto;
     }
-    .hero-text {
-      padding: 4rem 3rem 4rem 2.5rem;
-      color: white;
-    }
-    .hero-text .tag {
-      font-size: 0.78rem;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      opacity: 0.85;
-      margin-bottom: 1.1rem;
-    }
-    .hero-text h1 {
-      font-size: 3.4rem;
-      line-height: 1.12;
-      font-weight: 600;
+
+    .hero-action {
+      padding: 1.8rem 1.5rem 3.8rem;
+      text-align: center;
       color: #f5e6c8;
-      margin-bottom: 1.4rem;
-      letter-spacing: -1px;
     }
-    .hero-text p {
-      font-size: 1.1rem;
-      opacity: 0.92;
-      margin-bottom: 2.2rem;
+
+    .hero-action p {
+      max-width: 660px;
+      margin: 0 auto 1.3rem;
+      font-size: 1.05rem;
       line-height: 1.65;
-      max-width: 440px;
     }
+
     .btn {
       display: inline-block;
-      background: #8BA888;
-      color: #1A3C34;
+      background: #8ba888;
+      color: #1a3c34;
       padding: 0.95rem 1.9rem;
       border-radius: 8px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1rem;
-      transition: all 0.2s;
+      transition: background 0.2s, transform 0.2s;
     }
+
     .btn:hover {
       background: #a3c0a0;
       transform: translateY(-1px);
     }
-    .hero-image {
-      height: 100%;
-      min-height: 540px;
+
+    a:focus-visible {
+      outline: 3px solid #d3b675;
+      outline-offset: 5px;
     }
-    .hero-image img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-    /* Features */
+
+    /* Fördelar */
+
     .features-bar {
       background: white;
+      width: calc(100% - 2rem);
       max-width: 1100px;
       margin: -35px auto 0;
       border-radius: 14px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.08);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       position: relative;
       z-index: 10;
       overflow: hidden;
     }
+
     .feature-item {
       padding: 1.6rem 1.3rem;
       text-align: center;
       border-right: 1px solid #eee;
     }
-    .feature-item:last-child { border-right: none; }
-    .feature-item h4 {
+
+    .feature-item:last-child {
+      border-right: none;
+    }
+
+    .feature-item h3 {
       font-size: 0.9rem;
-      color: #1A3C34;
+      color: #1a3c34;
       margin-bottom: 0.35rem;
       font-weight: 600;
     }
+
     .feature-item p {
       font-size: 0.82rem;
       color: #666;
       line-height: 1.4;
     }
-    /* Products section */
+
+    /* Produkter */
+
     .section {
       padding: 5rem 2rem;
       max-width: 1100px;
       margin: 0 auto;
+      scroll-margin-top: 110px;
     }
+
     .section-header {
       text-align: center;
       margin-bottom: 3rem;
     }
+
     .section-header h2 {
       font-size: 1.9rem;
-      color: #1A3C34;
+      color: #1a3c34;
       margin-bottom: 0.5rem;
     }
+
     .section-header p {
       color: #555;
       max-width: 520px;
       margin: 0 auto;
     }
+
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1.8rem;
     }
+
     .product-card {
       background: white;
       border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
       transition: transform 0.25s;
+      display: flex;
+      flex-direction: column;
     }
-    .product-card:hover { transform: translateY(-5px); }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    /* Samma banner används även som tillfällig produktbild. */
+
     .product-card img {
+      display: block;
       width: 100%;
       height: 210px;
       object-fit: cover;
+      object-position: right center;
     }
+
     .product-info {
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      align-items: flex-start;
     }
+
     .product-info h3 {
-      color: #1A3C34;
+      color: #1a3c34;
       font-size: 1.1rem;
       margin-bottom: 0.4rem;
     }
+
     .product-info p {
       font-size: 0.92rem;
       color: #555;
       margin-bottom: 1rem;
     }
+
     .price {
       font-weight: 600;
-      color: #1A3C34;
+      color: #1a3c34;
+      margin-top: auto;
       margin-bottom: 1rem;
     }
+
     .btn-dark {
       display: inline-block;
-      background: #1A3C34;
+      background: #1a3c34;
       color: white;
       padding: 0.65rem 1.3rem;
       border-radius: 7px;
       text-decoration: none;
       font-size: 0.9rem;
+      transition: background 0.2s;
     }
+
+    .btn-dark:hover {
+      background: #295448;
+    }
+
+    /* Sidfot */
+
     footer {
-      background: #1A3C34;
+      background: #1a3c34;
       color: white;
       text-align: center;
       padding: 3.2rem 2rem;
       margin-top: 2rem;
+      scroll-margin-top: 110px;
     }
-    footer .brand { font-weight: 600; margin-bottom: 0.4rem; }
-    footer p { opacity: 0.85; font-size: 0.93rem; margin-bottom: 0.3rem; }
-    footer .small { margin-top: 1.6rem; font-size: 0.8rem; opacity: 0.65; }
+
+    footer .brand {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+    }
+
+    footer p {
+      opacity: 0.85;
+      font-size: 0.93rem;
+      margin-bottom: 0.3rem;
+    }
+
+    footer .small {
+      margin-top: 1.6rem;
+      font-size: 0.8rem;
+      opacity: 0.65;
+    }
+
+    /* Tillgänglig rubrik: bannern innehåller den synliga texten. */
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* Surfplatta */
+
     @media (max-width: 900px) {
-      .hero-inner {
+      header {
+        padding: 1rem 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 1.1rem;
+      }
+
+      .features-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .feature-item {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+
+      .feature-item:nth-child(odd) {
+        border-right: 1px solid #eee;
+      }
+
+      .feature-item:nth-last-child(-n + 2) {
+        border-bottom: none;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    /* Mobil */
+
+    @media (max-width: 600px) {
+      header {
+        padding: 0.9rem 1rem;
+        gap: 0.7rem;
+      }
+
+      .logo {
+        font-size: 1.15rem;
+      }
+
+      nav {
+        width: 100%;
+        gap: 0.8rem;
+      }
+
+      nav a {
+        font-size: 0.82rem;
+      }
+
+      .lang {
+        font-size: 0.78rem;
+      }
+
+      .hero-action {
+        padding: 1.4rem 1rem 3.5rem;
+      }
+
+      .hero-action p {
+        font-size: 0.95rem;
+      }
+
+      .btn {
+        padding: 0.85rem 1.3rem;
+        font-size: 0.95rem;
+      }
+
+      .feature-item {
+        padding: 1.2rem 0.8rem;
+      }
+
+      .feature-item h3 {
+        font-size: 0.83rem;
+      }
+
+      .feature-item p {
+        font-size: 0.77rem;
+      }
+
+      .section {
+        padding: 3.5rem 1rem;
+        scroll-margin-top: 150px;
+      }
+
+      .section-header {
+        margin-bottom: 2rem;
+      }
+
+      .section-header h2 {
+        font-size: 1.6rem;
+      }
+
+      .products {
         grid-template-columns: 1fr;
+        gap: 1.4rem;
       }
-      .hero-text {
-        padding: 3.5rem 2rem;
-        text-align: center;
+
+      .product-card img {
+        height: 240px;
       }
-      .hero-text h1 { font-size: 2.6rem; }
-      .hero-text p { margin-left: auto; margin-right: auto; }
-      .hero-image { min-height: 360px; }
-      .features-bar { grid-template-columns: 1fr 1fr; }
-      .feature-item { border-right: none; border-bottom: 1px solid #eee; }
+
+      footer {
+        padding: 2.5rem 1.2rem;
+        scroll-margin-top: 150px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .btn,
+      .btn-dark,
+      .product-card {
+        transition: none;
+      }
+
+      .btn:hover,
+      .product-card:hover {
+        transform: none;
+      }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="logo">
       mimosasweden2.0
       <span>Råvaror för tvåltillverkning</span>
     </div>
-    <nav>
-      <a href="#">Produkter</a>
+
+    <nav aria-label="Huvudmeny">
+      <a href="#produkter">Produkter</a>
       <a href="#">Recept</a>
       <a href="#">Blogg</a>
-      <a href="#">Om oss</a>
+      <a href="#om-oss">Om oss</a>
       <span class="lang">SV | EN</span>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-inner">
-      <div class="hero-text">
-        <div class="tag">Råvaror & tillbehör för dig som gör egen tvål</div>
-        <h1>Naturlig vård.<br>Äkta lyx.</h1>
-        <p>Vi säljer högkvalitativa råvaror och tillbehör så att du själv kan skapa dina egna tvålar och hudvårdsprodukter. Mimosa hostilis-bark, ren glycerin, formar och mer.</p>
-        <a href="#" class="btn">Upptäck våra råvaror →</a>
-      </div>
-      <div class="hero-image">
-        <img src="hero-image.jpg" alt="Naturlig vård. Äkta lyx. – Mimosa hostilis bark, glycerin och råvaror för tvåltillverkning">
-      </div>
-    </div>
-  </section>
+  <main>
+    <section class="hero" aria-labelledby="hero-heading">
+      <h1 id="hero-heading" class="visually-hidden">
+        Naturlig vård. Äkta lyx. – Råvaror för tvåltillverkning
+      </h1>
 
-  <div class="features-bar">
-    <div class="feature-item">
-      <h4>Råvaror av hög kvalitet</h4>
-      <p>Mimosa hostilis-bark, glycerin och noga utvalda ingredienser.</p>
-    </div>
-    <div class="feature-item">
-      <h4>För dig som gör egen tvål</h4>
-      <p>Allt du behöver för att skapa dina egna produkter hemma.</p>
-    </div>
-    <div class="feature-item">
-      <h4>Swish & Kort</h4>
-      <p>Enkel och säker betalning. F-skattsedel finns.</p>
-    </div>
-    <div class="feature-item">
-      <h4>Leverans i Europa</h4>
-      <p>Vi skickar dit det är tillåtet enligt lag.</p>
-    </div>
-  </div>
+      <img
+        class="hero-banner"
+        src="ChatGPT%20Image%2022%20sep.%202026%2015_54_49.png"
+        alt="Lux Botanica – Naturlig vård. Äkta lyx. Botaniska råvaror, bark, glycerin och gröna tvålar."
+        fetchpriority="high"
+      >
 
-  <section class="section">
-    <div class="section-header">
-      <h2>Utvalda råvaror</h2>
-      <p>Allt du behöver för att börja göra din egen tvål och hudvård.</p>
-    </div>
-    <div class="products">
-      <div class="product-card">
-        <img src="hero-image.jpg" alt="Mimosa Hostilis Bark">
-        <div class="product-info">
-          <h3>Mimosa Hostilis Root Bark</h3>
-          <p>Ren rotbark – perfekt som råvara för tvåltillverkning och hudvårdsprodukter.</p>
-          <div class="price">från 149 kr</div>
-          <a href="#" class="btn-dark">Visa produkt</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="hero-image.jpg" alt="Glycerin">
-        <div class="product-info">
-          <h3>Vegetabilisk Glycerin</h3>
-          <p>100% ren glycerin – en av de viktigaste baserna i tvåltillverkning.</p>
-          <div class="price">från 89 kr</div>
-          <a href="#" class="btn-dark">Visa produkt</a>
-        </div>
-      </div>
-      <div class="product-card">
-        <img src="hero-image.jpg" alt="Startkit">
-        <div class="product-info">
-          <h3>Startkit Tvåltillverkning</h3>
-          <p>Ett komplett kit med de viktigaste råvarorna och tillbehören.</p>
-          <div class="price">299 kr</div>
-          <a href="#" class="btn-dark">Visa produkt</a>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="hero-action">
+        <p>
+          Vi säljer högkvalitativa råvaror och tillbehör så att du
+          själv kan skapa dina egna tvålar och hudvårdsprodukter.
+          Mimosa hostilis-bark, ren glycerin, formar och mer.
+        </p>
 
-  <footer>
+        <a href="#produkter" class="btn">
+          Upptäck våra råvaror →
+        </a>
+      </div>
+    </section>
+
+    <div class="features-bar">
+      <div class="feature-item">
+        <h3>Råvaror av hög kvalitet</h3>
+        <p>
+          Mimosa hostilis-bark, glycerin och noga utvalda ingredienser.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>För dig som gör egen tvål</h3>
+        <p>
+          Allt du behöver för att skapa dina egna produkter hemma.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Swish &amp; Kort</h3>
+        <p>
+          Enkel och säker betalning. F-skattsedel finns.
+        </p>
+      </div>
+
+      <div class="feature-item">
+        <h3>Leverans i Europa</h3>
+        <p>
+          Vi skickar dit det är tillåtet enligt lag.
+        </p>
+      </div>
+    </div>
+
+    <section class="section" id="produkter">
+      <div class="section-header">
+        <h2>Utvalda råvaror</h2>
+        <p>
+          Allt du behöver för att börja göra din egen tvål och hudvård.
+        </p>
+      </div>
+
+      <div class="products">
+        <article class="product-card">
+          <img
+            src="ChatGPT%20Image%2022%20sep.%202026%2015_54_49.png"
+            alt="Botaniska råvaror med bark, glycerin och tvålar"
+            loading="lazy"
+          >
+
+          <div class="product-info">
+            <h3>Mimosa Hostilis Root Bark</h3>
+            <p>
+              Ren rotbark – perfekt som råvara för tvåltillverkning
+              och hudvårdsprodukter.
+            </p>
+            <div class="price">från 149 kr</div>
+            <a href="#" class="btn-dark">Visa produkt</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="ChatGPT%20Image%2022%20sep.%202026%2015_54_49.png"
+            alt="Glycerin tillsammans med botaniska råvaror och tvålar"
+            loading="lazy"
+          >
+
+          <div class="product-info">
+            <h3>Vegetabilisk Glycerin</h3>
+            <p>
+              100% ren glycerin – en av de viktigaste baserna
+              i tvåltillverkning.
+            </p>
+            <div class="price">från 89 kr</div>
+            <a href="#" class="btn-dark">Visa produkt</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img
+            src="ChatGPT%20Image%2022%20sep.%202026%2015_54_49.png"
+            alt="Inspirationsbild med gröna tvålar och råvaror"
+            loading="lazy"
+          >
+
+          <div class="product-info">
+            <h3>Startkit Tvåltillverkning</h3>
+            <p>
+              Ett komplett kit med de viktigaste råvarorna
+              och tillbehören.
+            </p>
+            <div class="price">299 kr</div>
+            <a href="#" class="btn-dark">Visa produkt</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="om-oss">
     <div class="brand">mimosasweden2.0</div>
-    <p>Råvaror & tillbehör för tvåltillverkning</p>
-    <p>F-skattsedel finns · Swish & kortbetalning · Leverans inom Europa där det är lagligt</p>
+    <p>Råvaror &amp; tillbehör för tvåltillverkning</p>
+    <p>
+      F-skattsedel finns · Swish &amp; kortbetalning ·
+      Leverans inom Europa där det är lagligt
+    </p>
     <p class="small">© 2026 mimosasweden2.0</p>
   </footer>
 </body>
